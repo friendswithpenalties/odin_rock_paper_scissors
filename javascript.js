@@ -39,3 +39,9 @@ function getHumanChoice() {
 }
 let humanChoice = getHumanChoice();
 console.log("You threw " + humanChoice);
+
+/*Write variables that will keep track of the players score
+Initializing them from 0*/
+
+var humanScore = 0;
+var computerScore = 0;
