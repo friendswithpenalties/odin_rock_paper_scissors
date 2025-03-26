@@ -15,8 +15,6 @@ function getComputerChoice() {
             return "Computer didn't throw hands";
     }
 }
-const computerChoice = getComputerChoice();
-console.log("Computer threw " + computerChoice);
 
 /*Write a function that will take user choice and return it.
 Make sure it is not case-sensitive.
@@ -37,8 +35,6 @@ function getHumanChoice() {
         return "nothing";
     }
 }
-const humanChoice = getHumanChoice();
-console.log("You threw " + humanChoice);
 
 /*Write variables that will keep track of the players score
 Initializing them from 0*/
@@ -46,29 +42,58 @@ Initializing them from 0*/
 var humanScore = 0;
 var computerScore = 0;
 
-
 /*Write function takes human and comp player choices as 
 arguments, play single round, increment the round winner's 
 score and logs a winner announcement*/
 
 function playRound(humanChoice, computerChoice) {
+
+
     if (humanChoice === "Rock" && computerChoice === "Paper") {
-        return computerScore++;
+        computerScore++;
+        console.log("You lose! Paper beats rock.");
     } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
-        return humanScore++;
+        humanScore++;
+        console.log("You win! Rock beats scissors.");
     } else if (humanChoice === "Paper" && computerChoice === "Rock") {
-        return humanScore++;
+        humanScore++;
+        console.log("You win! Paper beats rock.");
     } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
-        return computerScore++;
+        computerScore++;
+        console.log("You lose! Scissors beats paper.");
     } else if (humanChoice === "Scissors" && computerChoice === "Rock") {
-        return computerScore++;
+        computerScore++;
+        console.log("You lose! Rock beats scissors.");
     } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-        return humanScore++;
+        humanScore++;
+        console.log("You win! Scissors beats paper.");
     } else {
-        // do nothing
+        console.log("It's a tie!");
     }
 }
 
-playRound(humanChoice, computerChoice);
-console.log(humanScore);
-console.log(computerScore);
+
+/*Write function named playGame that calls playRound to play 5 rounds, 
+keeps track of the scores and declares a winner at the end */
+
+function playGame() {
+
+    
+    
+    for (let round = 0; round <5; round++) {
+        let computerChoice = getComputerChoice();
+        console.log("Computer threw " + computerChoice);
+        let humanChoice = getHumanChoice();
+        console.log("You threw " + humanChoice);
+
+        playRound(humanChoice, computerChoice);
+    }
+    if (humanScore > computerScore) {
+        console.log("CONGRADULATIONS! YOU WIN!");
+    } else {
+        console.log("TOO BAD! YOU LOSE!");
+    }
+
+}
+let gamePlayed = playGame();
+console.log(gamePlayed);
