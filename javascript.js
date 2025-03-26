@@ -15,7 +15,7 @@ function getComputerChoice() {
             return "Computer didn't throw hands";
     }
 }
-let computerChoice = getComputerChoice();
+const computerChoice = getComputerChoice();
 console.log("Computer threw " + computerChoice);
 
 /*Write a function that will take user choice and return it.
@@ -37,7 +37,7 @@ function getHumanChoice() {
         return "nothing";
     }
 }
-let humanChoice = getHumanChoice();
+const humanChoice = getHumanChoice();
 console.log("You threw " + humanChoice);
 
 /*Write variables that will keep track of the players score
@@ -45,3 +45,30 @@ Initializing them from 0*/
 
 var humanScore = 0;
 var computerScore = 0;
+
+
+/*Write function takes human and comp player choices as 
+arguments, play single round, increment the round winner's 
+score and logs a winner announcement*/
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "Rock" && computerChoice === "Paper") {
+        return computerScore++;
+    } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
+        return humanScore++;
+    } else if (humanChoice === "Paper" && computerChoice === "Rock") {
+        return humanScore++;
+    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
+        return computerScore++;
+    } else if (humanChoice === "Scissors" && computerChoice === "Rock") {
+        return computerScore++;
+    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+        return humanScore++;
+    } else {
+        // do nothing
+    }
+}
+
+playRound(humanChoice, computerChoice);
+console.log(humanScore);
+console.log(computerScore);
