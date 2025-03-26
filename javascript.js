@@ -16,7 +16,7 @@ function getComputerChoice() {
     }
 }
 let computerChoice = getComputerChoice();
-console.log(computerChoice);
+console.log("Computer threw " + computerChoice);
 
 /*Write a function that will take user choice and return it.
 Make sure it is not case-sensitive.
