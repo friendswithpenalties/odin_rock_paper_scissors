@@ -48,7 +48,6 @@ score and logs a winner announcement*/
 
 function playRound(humanChoice, computerChoice) {
 
-
     if (humanChoice === "Rock" && computerChoice === "Paper") {
         computerScore++;
         console.log("You lose! Paper beats rock.");
@@ -77,8 +76,6 @@ function playRound(humanChoice, computerChoice) {
 keeps track of the scores and declares a winner at the end */
 
 function playGame() {
-
-    
     
     for (let round = 0; round <5; round++) {
         let computerChoice = getComputerChoice();
@@ -93,7 +90,6 @@ function playGame() {
     } else {
         console.log("TOO BAD! YOU LOSE!");
     }
-
 }
 let gamePlayed = playGame();
 console.log(gamePlayed);
