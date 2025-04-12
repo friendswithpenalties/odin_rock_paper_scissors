@@ -72,9 +72,36 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
+const rockbtn = document.querySelector("#rockbtn");
+rockbtn.addEventListener("click", () => {
+    let computerChoice =  getComputerChoice();
+    playRound("Rock", computerChoice);
+    
+    console.log("You chose rock!");
+    });
+
+const paperbtn = document.querySelector("#paperbtn");
+paperbtn.addEventListener("click", () => {
+    let computerChoice =  getComputerChoice();
+    playRound("Paper", computerChoice);
+    
+    console.log("You chose paper!");
+    });
+
+const scissorsbtn = document.querySelector("#scissorsbtn");
+scissorsbtn.addEventListener("click", () => {
+    let computerChoice =  getComputerChoice();
+    playRound("Scissors", computerChoice);
+    
+    console.log("You chose scissors!");
+    });
+
+
+
 /*Write function named playGame that calls playRound to play 5 rounds, 
 keeps track of the scores and declares a winner at the end */
 
+/*
 function playGame() {
     
     for (let round = 0; round <5; round++) {
@@ -93,3 +120,5 @@ function playGame() {
 }
 let gamePlayed = playGame();
 console.log(gamePlayed);
+*/
+
