@@ -72,12 +72,18 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
+
+
+
 const rockbtn = document.querySelector("#rockbtn");
 rockbtn.addEventListener("click", () => {
     let computerChoice =  getComputerChoice();
     playRound("Rock", computerChoice);
     
-    console.log("You chose rock!");
+
+    const rockChoice = document.createElement("p");
+    rockChoice.textContent = `You chose rock while computer chose ${computerChoice}`;
+    results.appendChild(rockChoice);
     });
 
 const paperbtn = document.querySelector("#paperbtn");
@@ -85,7 +91,9 @@ paperbtn.addEventListener("click", () => {
     let computerChoice =  getComputerChoice();
     playRound("Paper", computerChoice);
     
-    console.log("You chose paper!");
+    const paperChoice = document.createElement('p');
+    paperChoice.textContent = `You chose paper while computer chose ${computerChoice}`;
+    results.appendChild(paperChoice);
     });
 
 const scissorsbtn = document.querySelector("#scissorsbtn");
@@ -93,8 +101,12 @@ scissorsbtn.addEventListener("click", () => {
     let computerChoice =  getComputerChoice();
     playRound("Scissors", computerChoice);
     
-    console.log("You chose scissors!");
+    const scissorsChoice = document.createElement('p');
+    scissorsChoice.textContent = `You chose paper while computer chose ${computerChoice}`;
+    results.appendChild(scissorsChoice);
     });
+
+
 
 
 
