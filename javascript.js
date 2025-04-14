@@ -71,8 +71,23 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-
-
+function resetScore() {
+    humanScore = 0;
+    computerScore = 0;
+}
+function winningScore() {
+    if (humanScore === 5) {
+        const humanWin = document.createElement("p");
+        humanWin.textContent = "You win this round!";
+        results.appendChild(humanWin);
+        resetScore ();
+    } else if (computerScore === 5) {
+        const computerWin = document.createElement("p");
+        computerWin.textContent = "Computer wins this round!";
+        results.appendChild(computerWin);
+        resetScore ();
+    }  
+}
 
 
 const rockbtn = document.querySelector("#rockbtn");
@@ -89,7 +104,12 @@ rockbtn.addEventListener("click", () => {
     runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
     results.appendChild(runningScore);
 
+    rockbtn.addEventListener('click', () => {
+        results.removeChild(rockChoice);
+        results.removeChild(runningScore);
+    })
 
+    winningScore();
     });
 
 const paperbtn = document.querySelector("#paperbtn");
@@ -105,7 +125,12 @@ paperbtn.addEventListener("click", () => {
     runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
     results.appendChild(runningScore);
 
+    paperbtn.addEventListener('click', () => {
+        results.removeChild(paperChoice);
+        results.removeChild(runningScore);
+    })
 
+    winningScore();
     });
 
 const scissorsbtn = document.querySelector("#scissorsbtn");
@@ -120,20 +145,18 @@ scissorsbtn.addEventListener("click", () => {
     const runningScore = document.createElement("p");
     runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
     results.appendChild(runningScore);
+  
+    scissorsbtn.addEventListener('click', () => {
+        results.removeChild(scissorsChoice);
+        results.removeChild(runningScore);
+    })
 
-    if (humanScore === 5) {
-        const humanWin = document.createElement("p");
-        humanWin.textContent = "You win this round!";
-        results.appendChild(humanWin);
-    } else if (computerScore === 5) {
-        const computerWin = document.createElement("p");
-        computerWin.textContent = "Computer wins this round!";
-        results.appendChild(computerWin);
-    }
-    
+    winningScore();
     });
 
 
+
+    
 
 
 
