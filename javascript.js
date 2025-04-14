@@ -88,6 +88,8 @@ rockbtn.addEventListener("click", () => {
     const runningScore = document.createElement("p");
     runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
     results.appendChild(runningScore);
+
+
     });
 
 const paperbtn = document.querySelector("#paperbtn");
@@ -102,6 +104,8 @@ paperbtn.addEventListener("click", () => {
     const runningScore = document.createElement("p");
     runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
     results.appendChild(runningScore);
+
+
     });
 
 const scissorsbtn = document.querySelector("#scissorsbtn");
@@ -116,6 +120,17 @@ scissorsbtn.addEventListener("click", () => {
     const runningScore = document.createElement("p");
     runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
     results.appendChild(runningScore);
+
+    if (humanScore === 5) {
+        const humanWin = document.createElement("p");
+        humanWin.textContent = "You win this round!";
+        results.appendChild(humanWin);
+    } else if (computerScore === 5) {
+        const computerWin = document.createElement("p");
+        computerWin.textContent = "Computer wins this round!";
+        results.appendChild(computerWin);
+    }
+    
     });
 
 
