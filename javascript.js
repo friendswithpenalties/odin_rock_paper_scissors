@@ -82,8 +82,12 @@ rockbtn.addEventListener("click", () => {
     
 
     const rockChoice = document.createElement("p");
-    rockChoice.textContent = `You chose rock while computer chose ${computerChoice}`;
+    rockChoice.textContent = `You chose Rock while computer chose ${computerChoice}`;
     results.appendChild(rockChoice);
+
+    const runningScore = document.createElement("p");
+    runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
+    results.appendChild(runningScore);
     });
 
 const paperbtn = document.querySelector("#paperbtn");
@@ -92,8 +96,12 @@ paperbtn.addEventListener("click", () => {
     playRound("Paper", computerChoice);
     
     const paperChoice = document.createElement('p');
-    paperChoice.textContent = `You chose paper while computer chose ${computerChoice}`;
+    paperChoice.textContent = `You chose Paper while computer chose ${computerChoice}`;
     results.appendChild(paperChoice);
+
+    const runningScore = document.createElement("p");
+    runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
+    results.appendChild(runningScore);
     });
 
 const scissorsbtn = document.querySelector("#scissorsbtn");
@@ -102,8 +110,12 @@ scissorsbtn.addEventListener("click", () => {
     playRound("Scissors", computerChoice);
     
     const scissorsChoice = document.createElement('p');
-    scissorsChoice.textContent = `You chose paper while computer chose ${computerChoice}`;
+    scissorsChoice.textContent = `You chose Scissors while computer chose ${computerChoice}`;
     results.appendChild(scissorsChoice);
+
+    const runningScore = document.createElement("p");
+    runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
+    results.appendChild(runningScore);
     });
 
 
