@@ -78,23 +78,26 @@ function resetScore() {
 function winningScore() {
     if (humanScore === 5) {
         const humanWin = document.createElement("p");
-        humanWin.textContent = "You win this round!";
+        humanWin.textContent = "You win this round! New game starts in 5 seconds";
         results.appendChild(humanWin);
         resetScore ();
+        setTimeout(function() {location.reload();}, 5000);
     } else if (computerScore === 5) {
         const computerWin = document.createElement("p");
-        computerWin.textContent = "Computer wins this round!";
+        computerWin.textContent = "Computer wins this round! New game starts in 5 seconds";
         results.appendChild(computerWin);
         resetScore ();
+        setTimeout(function() {location.reload();}, 5000);
+        
     }  
 }
+
 
 
 const rockbtn = document.querySelector("#rockbtn");
 rockbtn.addEventListener("click", () => {
     let computerChoice =  getComputerChoice();
     playRound("Rock", computerChoice);
-    
 
     const rockChoice = document.createElement("p");
     rockChoice.textContent = `You chose Rock while computer chose ${computerChoice}`;
@@ -102,14 +105,15 @@ rockbtn.addEventListener("click", () => {
 
     const runningScore = document.createElement("p");
     runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
-    results.appendChild(runningScore);
+    results.appendChild(runningScore); 
 
     rockbtn.addEventListener('click', () => {
-        results.removeChild(rockChoice);
-        results.removeChild(runningScore);
-    })
+            rockChoice.textContent = "";
+            runningScore.textContent = "";
+        })
 
     winningScore();
+
     });
 
 const paperbtn = document.querySelector("#paperbtn");
@@ -123,12 +127,12 @@ paperbtn.addEventListener("click", () => {
 
     const runningScore = document.createElement("p");
     runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
-    results.appendChild(runningScore);
+    results.appendChild(runningScore); 
 
     paperbtn.addEventListener('click', () => {
-        results.removeChild(paperChoice);
-        results.removeChild(runningScore);
-    })
+        paperChoice.textContent = "";
+        runningScore.textContent = "";
+        })
 
     winningScore();
     });
@@ -141,19 +145,18 @@ scissorsbtn.addEventListener("click", () => {
     const scissorsChoice = document.createElement('p');
     scissorsChoice.textContent = `You chose Scissors while computer chose ${computerChoice}`;
     results.appendChild(scissorsChoice);
-
+  
     const runningScore = document.createElement("p");
     runningScore.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
-    results.appendChild(runningScore);
-  
+    results.appendChild(runningScore); 
+
     scissorsbtn.addEventListener('click', () => {
-        results.removeChild(scissorsChoice);
-        results.removeChild(runningScore);
+        scissorsChoice.textContent = "";
+        runningScore.textContent = "";
     })
 
     winningScore();
     });
-
 
 
     
