@@ -112,6 +112,9 @@ rockbtn.addEventListener("click", () => {
             runningScore.textContent = "";
         })
 
+    if (humanScore === 5 || computerScore === 5){
+        rockbtn.disabled = true;
+    }
     winningScore();
 
     });
@@ -133,7 +136,9 @@ paperbtn.addEventListener("click", () => {
         paperChoice.textContent = "";
         runningScore.textContent = "";
         })
-
+    if (humanScore === 5 || computerScore === 5){
+        paperbtn.disabled = true;
+    }
     winningScore();
     });
 
@@ -153,13 +158,14 @@ scissorsbtn.addEventListener("click", () => {
     scissorsbtn.addEventListener('click', () => {
         scissorsChoice.textContent = "";
         runningScore.textContent = "";
-    })
-
+        })
+    if (humanScore === 5 || computerScore === 5){
+        scissorsbtn.disabled = true;
+    }
     winningScore();
     });
 
 
-    
 
 
 
